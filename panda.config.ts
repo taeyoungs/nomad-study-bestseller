@@ -15,6 +15,20 @@ export default defineConfig({
 
   // Useful for theme customization
   theme: {
-    extend: {},
+    extend: {
+      tokens: {
+        colors: {
+          body: { value: '#F2E7C5' },
+          header: { value: '#504242' },
+          primary: { value: '#EC906B' },
+          secondary: { value: '#F4BC8B' },
+          tertiary: { value: '#F3E2AA' },
+        },
+        fonts: {
+          dancing: { value: 'var(--font-dancing-script), cursive' },
+          raleway: { value: 'var(--font-raleway), sans-serif' },
+        },
+      },
+    },
   },
 });
