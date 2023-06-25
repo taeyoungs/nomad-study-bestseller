@@ -10,7 +10,6 @@ const baseStyles = css({
   bg: 'tertiary',
   boxShadow: 'float',
   color: 'primary',
-  cursor: 'pointer',
   fontFamily: 'raleway',
   fontWeight: 'semibold',
   p: '4',
@@ -21,16 +20,21 @@ const baseStyles = css({
 interface FloatingBoxProps {
   children: React.ReactNode;
   className?: string;
+  external?: boolean;
   href: string;
 }
 
-function FloatingBox({ children, className, href }: FloatingBoxProps) {
+function FloatingBox({ children, className, external = false, href }: FloatingBoxProps) {
   const mergedClassName = cx(baseStyles, className);
 
-  return (
-    <div className={mergedClassName}>
-      <Link href={href}>{children}</Link>
-    </div>
+  return external ? (
+    <Link href={href} rel="noreferrer" target="_blank">
+      <div className={mergedClassName}>{children}</div>
+    </Link>
+  ) : (
+    <Link href={href}>
+      <div className={mergedClassName}>{children}</div>
+    </Link>
   );
 }
 
