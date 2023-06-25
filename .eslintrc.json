@@ -1,3 +1,29 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next/core-web-vitals", "plugin:perfectionist/recommended-natural"],
+  "plugins": ["unused-imports", "perfectionist"],
+  "rules": {
+    "perfectionist/sort-objects": [
+      "error",
+      {
+        "type": "natural",
+        "order": "asc"
+      }
+    ],
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "args": "after-used",
+        "argsIgnorePattern": "^_",
+        "vars": "all",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+    "@typescript-eslint/adjacent-overload-signatures": "off",
+    "@typescript-eslint/sort-type-constituents": "off",
+    "react/jsx-sort-props": "off",
+    "import/order": "off",
+    "sort-imports": "off",
+    "sort-keys": "off"
+  }
 }
