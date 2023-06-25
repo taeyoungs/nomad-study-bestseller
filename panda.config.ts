@@ -28,6 +28,10 @@ export default defineConfig({
           dancing: { value: 'var(--font-dancing-script), cursive' },
           raleway: { value: 'var(--font-raleway), sans-serif' },
         },
+        shadows: {
+          float: { value: '16px 16px 5px 0px rgba(236, 144, 107, 0.15)' },
+          sinking: { value: '7px 7px 5px 0px rgba(236, 144, 107, 0.75)' },
+        },
       },
     },
   },
