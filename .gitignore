@@ -85,3 +85,7 @@ package.tgz
 .idea
 
 coverage
+
+# Panda
+styled-system
+styled-system-static
