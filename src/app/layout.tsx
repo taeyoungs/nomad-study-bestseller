@@ -1,6 +1,7 @@
 import Header from '@/app/components/Header';
 
 import { css } from '../../styled-system/css';
+import { container } from '../../styled-system/patterns';
 import { dacingScript, raleway } from './fonts';
 import './globals.css';
 
@@ -14,7 +15,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html className={`${raleway.variable} ${dacingScript.variable}`} lang="en">
       <body className={css({ bg: 'body', minH: '100vh' })}>
         <Header />
-        {children}
+        <main className={css({ height: 'full', mt: '-6' })}>
+          <div
+            className={css({ bg: 'body', py: '12', roundedTopLeft: '3xl', roundedTopRight: '3xl' })}
+          >
+            <div className={container()}>{children}</div>
+          </div>
+        </main>
       </body>
     </html>
   );
