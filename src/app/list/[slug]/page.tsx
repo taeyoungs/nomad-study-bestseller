@@ -68,6 +68,8 @@ async function Page({ params }: { params: { slug: string } }) {
                   alt={book.title}
                   blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMMcHKqBwADEwFVKUbjdAAAAABJRU5ErkJggg=="
                   fill
+                  loading="lazy"
+                  placeholder="blur"
                   sizes="100vw"
                   src={book.book_image}
                 />
