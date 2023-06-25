@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { FloatingBox } from '@/components';
 
 import { css } from '../../styled-system/css';
 import { container, flex } from '../../styled-system/patterns';
@@ -26,26 +26,9 @@ export default async function Home() {
         <div className={container()}>
           <div className={flex({ flexWrap: 'wrap', gap: '10' })}>
             {bestSellerList.results.map((bestSeller) => (
-              <div
-                className={css({
-                  _hover: {
-                    boxShadow: 'sinking',
-                    transform: 'translate(5px, 5px)',
-                  },
-                  bg: 'tertiary',
-                  boxShadow: 'float',
-                  color: 'primary',
-                  cursor: 'pointer',
-                  fontFamily: 'raleway',
-                  fontWeight: 'semibold',
-                  p: '4',
-                  rounded: 'md',
-                  transition: 'all 0.3s',
-                })}
-                key={bestSeller.display_name}
-              >
-                <Link href={`/list/${bestSeller.list_name}`}>{bestSeller.display_name} →</Link>
-              </div>
+              <FloatingBox href={`/list/${bestSeller.list_name}`} key={bestSeller.display_name}>
+                {bestSeller.display_name} →
+              </FloatingBox>
             ))}
           </div>
         </div>
