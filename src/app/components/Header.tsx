@@ -21,11 +21,11 @@ function Header() {
   const pathname = usePathname();
 
   return (
-    <header className={css({ m: '10', textAlign: 'center' })}>
+    <header className={css({ bg: 'header', p: '10', textAlign: 'center' })}>
       <h1 className={css({ color: 'primary', fontFamily: 'dancing', fontSize: '5xl' })}>
         New York Times Best Seller Explorer
       </h1>
-      <nav className={css({ mb: '10', mt: '4' })}>
+      <nav className={css({ mb: '16', mt: '4' })}>
         <ul className={flex({ align: 'center', gap: '6', justifyContent: 'center' })}>
           {NAV_LINKS.map((link) => {
             const isActive = pathname === link.href;
