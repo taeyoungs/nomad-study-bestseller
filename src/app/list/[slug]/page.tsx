@@ -36,10 +36,10 @@ async function Page({ params }: { params: { slug: string } }) {
           textAlign: 'center',
         })}
       >
-        {bestSellerList.results.list_name} Books
+        {bestSellerList.results?.list_name} Books
       </h2>
       <div className={grid({ columns: 5, gap: '10' })}>
-        {bestSellerList.results.books.map((book) => (
+        {bestSellerList.results?.books.map((book) => (
           <div
             className={cx(
               css({
@@ -64,7 +64,13 @@ async function Page({ params }: { params: { slug: string } }) {
                   width: 'full',
                 })}
               >
-                <Image alt={book.title} fill sizes="100vw" src={book.book_image} />
+                <Image
+                  alt={book.title}
+                  blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMMcHKqBwADEwFVKUbjdAAAAABJRU5ErkJggg=="
+                  fill
+                  sizes="100vw"
+                  src={book.book_image}
+                />
               </div>
               <figcaption>
                 <h3
