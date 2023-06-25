@@ -1,9 +1,5 @@
-import { Dancing_Script, Raleway } from 'next/font/google';
-
+import { raleway } from './fonts';
 import './globals.css';
-
-const raleway = Raleway({ subsets: ['latin'] });
-const dacingScript = Dancing_Script({ subsets: ['latin'] });
 
 export const metadata = {
   description: 'New York Times Best Seller',
@@ -13,7 +9,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${raleway.className} ${dacingScript.className}`}>{children}</body>
+      <body className={raleway.className}>{children}</body>
     </html>
   );
 }
